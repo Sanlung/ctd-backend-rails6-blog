@@ -1,0 +1,9 @@
+<h1><%= @page.title %></h1>
+
+<p><%= @page.slug %></p>
+
+<p><%= @page.body %></p>
+
+<%= link_to 'Edit Page', edit_page_path(@page) %>
+<%= link_to 'Delete Page', @page, method: :delete %>
+<%= link_to 'Blog Pages', pages_path %>
