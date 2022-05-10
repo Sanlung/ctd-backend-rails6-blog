@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Post</h1>
+
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
@@ -12,3 +14,19 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<div id="comments">
+  <% if @post.comments.present? %>
+    <h3>Comments:</h3>
+  <% end %>
+  <ul style="list-style: '\27A4'">
+    <!-- <% @post.comments.each do |comment| %>
+      <%= render partial: 'comments/comment', locals: {comment: comment} %>
+      <% end %>
+      <%= render partial: 'comments/comment', collection: @post.comments, as: :comment %>
+      <%= render partial: 'comments/comment', collection: @post.comments %> -->
+    <%= render @post.comments %>
+  </ul>
+  <h3>Add a Comment</h3>
+  <%= render partial: 'comments/form', locals: {comment: @post.comments.new} %>
+</div>

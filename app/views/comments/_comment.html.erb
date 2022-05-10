@@ -1,0 +1,10 @@
+<li>
+  &nbsp;By <%= comment.name %>
+  <p>
+    <%= comment.content %>
+    &nbsp;
+    <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
+    &nbsp;
+    <%= link_to "Delete", [@post, comment], method: :delete %>
+  </p>
+</li>
